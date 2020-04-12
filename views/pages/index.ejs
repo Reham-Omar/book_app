@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/style.css">
+
+</head>
+
+<body>
+    <header>Best Books!</header>
+    <main>
+        <h2>Search by Title or Author</h2>
+        <form action="/searches" method="post">
+            <label class="enter">
+                <input type="text" name="search" placeholder="Enter a title or author" required> </label>
+            <label class="ta">
+                <span>Title</span>
+                <input type="checkbox" name="title" >
+            </label>
+            <label class="ta">
+                <span>Author</span>
+                <input type="checkbox" name="author" >
+            </label>
+            <button>Search thr Google Books API !</button>
+        </form>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+</body>
+
+</html>
