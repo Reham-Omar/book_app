@@ -61,7 +61,7 @@ function books(val) {
 app.get('*', (req, res) => {
     res.status(404).send('This route does not exist!!');
 })
-server.get('/error', (request, response) => {
+app.get('/error', (request, response) => {
     response.render('pages/error');
 });
 app.listen(PORT, () => {
