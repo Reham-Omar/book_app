@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/style.css">
+
+<body>
+    <header>Best Books!</header>
+    <nav></nav>
+    <h2>Search Results</h2>
+    <% book.forEach((val)=> { %>
+    <div >
+        <img class="bookimage" src=<%=val.image %><br>
+        <p class="booktitle">Title : <%=val.title %></p>
+        <p class="bookauthor">Author : <%=val.author %></p>
+        <p class="bookdescp">Book Description  : <%= val.description %></p>
+        <form class="select" action="/pages/searches" method="POST">
+            <button class="select"> Select This Book </button>
+     </form>
+    </div>
+    <% }); %>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="server.js"></script>
+
+</body>
+
+</html>
