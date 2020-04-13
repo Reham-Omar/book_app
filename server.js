@@ -18,7 +18,9 @@ app.get('/', (req, res) => {
     res.render('pages/index');
 })
 
-
+app.get('/new',(req,res)=>{
+    res.render('pages/searches/new');
+})
 
 app.post('/searches', (req, res) => {
     let url = `https://www.googleapis.com/books/v1/volumes?q=`;
@@ -28,13 +30,13 @@ app.post('/searches', (req, res) => {
     // console.log(' searchurlllllllllllllllllll', req.body.search);
 
     if (req.body.title === 'on') {
-        url += `${req.body.search}+intitle`;
-        console.log("tttttttttttttt",url);
+        url += `+intitle:${req.body.search}`;
+        // console.log("tttttttttttttt",url);
 
 
     } else if (req.body.author === 'on') {
-        url += `${req.body.search}+inauthor`;
-        console.log("tttttttttttttt",url);
+        url += `+inauthor:${req.body.search}`;
+        // console.log("tttttttttttttt",url);
     }
 
     superagent.get(url)
@@ -44,7 +46,7 @@ app.post('/searches', (req, res) => {
                 return new books(val);
             })
             res.render('pages/searches/show', { book: result })
-            console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", result)
+            // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", result)
 
         })
         .catch(error => {
