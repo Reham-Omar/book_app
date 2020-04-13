@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/style.css">
+
+<body>
+    <header>
+        <h1>Best Books! </h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/new">Search the google API</a></li>
+            </ul>
+        </nav>
+    </header>    
+    <h2>Search Results</h2>
+    <% book.forEach((val)=> { %>
+    <div>
+        <img class="bookimage" src=<%=val.image %><br>
+        <p class="booktitle">Title : <%=val.title %></p>
+        <p class="bookauthor">Author : <%=val.author %></p>
+        <p class="bookdescp">Book Description : <%= val.description %></p>
+        <form class="select" action="/add" method="post">
+            <input type="hidden" name="image" value="<%=val.image %>">
+            <input type="hidden" name="title" value="<%=val.title %>">
+            <input type="hidden" name="author" value="<%=val.author %>">
+            <input type="hidden" name="description" value="<%= val.description %>">
+            <button class="select"> Select This Book </button>
+        </form>
+    </div>
+    <% }); %>
+    
+
+</body>
+
+</html>

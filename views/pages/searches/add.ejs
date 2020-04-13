@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Best Books! </h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/new">Search the google API</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form class="addForm" action="/books" method="post">
+        <label class="lblADD">
+            <input  type="text" name="image" value="<%= books.image%>">
+            <label class="lblADD">
+                <input  type="text" name="title" placeholder="Populated Title:" value="<%= books.title%>">
+            </label>
+            <label class="lblADD">
+                <input  type="text" name="author" placeholder="Populated Author:" value=" <%= books.author%>">
+            </label>
+            <label class="lblADD">
+                <textarea  name="description" placeholder="description:" ><%=books.description%></textarea>
+            </label>
+            <button> Add To My Books </button>
+        </label>
+    </form>
+    </body>
+</html>
