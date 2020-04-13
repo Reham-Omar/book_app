@@ -10,7 +10,6 @@
 
 <body>
     <header>Best Books!</header>
-    <nav></nav>
     <h2>Search Results</h2>
     <% book.forEach((val)=> { %>
     <div >
@@ -18,7 +17,7 @@
         <p class="booktitle">Title : <%=val.title %></p>
         <p class="bookauthor">Author : <%=val.author %></p>
         <p class="bookdescp">Book Description  : <%= val.description %></p>
-        <form class="select" action="/pages/searches" method="POST">
+        <form class="select" action="/" method="get">
             <button class="select"> Select This Book </button>
      </form>
     </div>
