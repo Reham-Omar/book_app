@@ -11,31 +11,26 @@
 </head>
 
 <body>
-    <header>Best Books!</header>
-    <main>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/new">Search the google API</a></li>
-            </ul>
-        </nav>
-        <!-- <h2>Search by Title or Author</h2>
-        <form action="/searches" method="post">
-            <label class="enter">
-                <input type="text" name="search" placeholder="Enter a title or author" required> </label>
-            <label class="ta">
-                <span>Title</span>
-                <input type="checkbox" name="title" >
-            </label>
-            <label class="ta">
-                <span>Author</span>
-                <input type="checkbox" name="author" >
-            </label>
-            <button>Search thr Google Books API !</button>
-        </form> -->
-    </main>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
+    <%- include('./layout/header.ejs') %>
+
+
+    <section>
+
+        <% taskResults.forEach(task => { %>
+        <div>
+            <h4> <img src="<%= task.image %>"></h4>
+            <h3>Title: <%= task.title %></h3>
+            <h3> Author: <%= task.author %></h3>
+            <button class="detBtn"><a href="/tasks/<%= task.id%>" class="aa">View details</a></button>
+        </div>
+
+
+        <% }) %>
+
+    </section>
+    </main>
+    
 </body>
 
 </html>
