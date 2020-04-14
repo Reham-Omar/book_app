@@ -14,29 +14,44 @@
     <header>
         <h1>Best Books! </h1>
         <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/new">Search the google API</a></li>
-            </ul>
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                  <a href="/">HOME</a>
+                  <a href="/new">Search the google API</a>
+                  
+                </div>
+              </div>
+              
+              
+              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         </nav>
+        
     </header>
+    
     <main>
         <h2>Search by Title or Author</h2>
-        <form action="/searches" method="post">
+        <form class="form-1" action="/searches" method="post">
             <label class="enter">
-                <input type="text" name="search" placeholder="Enter a title or author" required> </label>
+                <input  id="enter-ta" type="text" name="search" placeholder="Enter a title or author" required> </label>
             <label class="ta">
                 <span>Title</span>
-                <input type="checkbox" name="title" >
+                <input type="checkbox" name="title">
             </label>
             <label class="ta">
                 <span>Author</span>
-                <input type="checkbox" name="author" >
+                <input type="checkbox" name="author">
             </label>
-            <button>Search thr Google Books API !</button>
+            <button id="search-btn">Search the Google Books API !</button>
         </form>
     </main>
-    
+    <footer>
+        <p class="all">All right reserved 2020 </p>
+        <p class="done">Done By : Reham AL-Sobh </p>
+        
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>
