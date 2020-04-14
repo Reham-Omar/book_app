@@ -18,19 +18,15 @@
         </nav>
     </header>
     <form class="addForm" action="/books" method="post">
-        <label class="lblADD">
+        <label for="" class="lblADD">Image-URL</label>
             <input  type="text" name="image" value="<%= books.image%>">
-            <label class="lblADD">
+            <label for="" class="lblADD">Title</label>
                 <input  type="text" name="title" placeholder="Populated Title:" value="<%= books.title%>">
-            </label>
-            <label class="lblADD">
+        <label for="" class="lblADD">Author</label>
                 <input  type="text" name="author" placeholder="Populated Author:" value=" <%= books.author%>">
-            </label>
-            <label class="lblADD">
+    <label for="" class="lblADD">Description</label>
                 <textarea  name="description" placeholder="description:" ><%=books.description%></textarea>
-            </label>
             <button> Add To My Books </button>
-        </label>
     </form>
     </body>
 </html>
