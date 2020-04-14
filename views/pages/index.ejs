@@ -14,15 +14,15 @@
 
     <%- include('./layout/header.ejs') %>
 
-
+    <h2>Saved Books</h2>
     <section>
 
-        <% taskResults.forEach(task => { %>
+        <% books.forEach(book => { %>
         <div>
-            <h4> <img src="<%= task.image %>"></h4>
-            <h3>Title: <%= task.title %></h3>
-            <h3> Author: <%= task.author %></h3>
-            <button class="detBtn"><a href="/tasks/<%= task.id%>" class="aa">View details</a></button>
+            <h4> <img src="<%= book.image %>"></h4>
+            <h3>Title: <%= book.title %></h3>
+            <h3> Author: <%= book.author %></h3>
+            <button class="detBtn"><a href="/book/<%= book.id%>" class="aa">View details</a></button>
         </div>
 
 
@@ -30,7 +30,7 @@
 
     </section>
     </main>
-    
+
 </body>
 
 </html>
