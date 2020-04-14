@@ -21,12 +21,30 @@
         </nav>
 
 
-    <h4><img class="img1" src="<%= task.image %>"></h4>
-    <p>Title : <%= task.title %></p>
-    <p>Auther : <%= task.author %></p>
-    <p>Description : <%= task.description %></p>
+        <h4><img class="img1" src="<%= book.image %>"></h4>
+        <p>Title : <%= book.title %></p>
+        <p>Auther : <%= book.author %></p>
+        <p>Description : <%= book.description %></p>
 
 
+        <button id='update_btn'>Update Details</button>
+        <section id='update_form'>
+            <h2>Update book</h2>
+            <form action="/update/<%=book.id%>?_method=put" method="post">
+                <input type="text"  name="image"  value="<%= book.image %>" >
+                <input type="text" name="title" value="<%= book.title %>">
+                <input type="text" name="author" value="<%= book.author %>">
+                <textarea name="description" cols="30" rows="10"><%= book.description %></textarea>
+                <button type='submit'> Update Details</button>
+            </form>
+        </section>
+
+        <form action="/delete/<%=book.id%>?_method=delete" method="post">
+            <button type="submit">Delete</button>
+        </form>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+        <script src="/js/app.js"></script>
 </body>
 
 </html>
