@@ -11,12 +11,21 @@
     <header>
         <h1>Best Books! </h1>
         <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/new">Search the google API</a></li>
-            </ul>
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                  <a href="/">HOME</a>
+                  <a href="/new">Search the google API</a>
+                  
+                </div>
+              </div>
+              
+              
+              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         </nav>
+        
     </header>
+    
     <form class="addForm" action="/books" method="post">
         <label for="" class="lblADD">Image-URL</label>
             <input  type="text" name="image" value="<%= books.image%>">
@@ -25,8 +34,16 @@
         <label for="" class="lblADD">Author</label>
                 <input  type="text" name="author" placeholder="Populated Author:" value=" <%= books.author%>">
     <label for="" class="lblADD">Description</label>
-                <textarea  name="description" placeholder="description:" ><%=books.description%></textarea>
-            <button> Add To My Books </button>
+                <textarea class="desc" name="description" placeholder="description:" ><%=books.description%></textarea>
+            <button class="mybook"> Add To My Books </button>
     </form>
+    
+    <footer>
+        <p class="all">All right reserved 2020 </p>
+        <p class="done">Done By : Reham AL-Sobh </p>
+        
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <script src="/js/app.js"></script>
     </body>
 </html>

@@ -11,38 +11,52 @@
 
 <body>
 
-    <header>Best Books!</header>
-    <main>
+    <header>
+        <h1>Best Books! </h1>
         <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/new">Search the google API</a></li>
-            </ul>
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                  <a href="/">HOME</a>
+                  <a href="/new">Search the google API</a>
+                  
+                </div>
+              </div>
+              
+              
+              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         </nav>
+        
+    </header>
+    <h2>Book Details </h2>
 
 
         <h4><img class="img1" src="<%= book.image %>"></h4>
-        <p>Title : <%= book.title %></p>
-        <p>Auther : <%= book.author %></p>
+        <h5>Title : <%= book.title %></h5>
+        <h6>Auther : <%= book.author %></h6>
         <p>Description : <%= book.description %></p>
 
 
         <button id='update_btn'>Update Details</button>
         <section id='update_form'>
-            <h2>Update book</h2>
+            <!-- <h2>Update book</h2> -->
             <form action="/update/<%=book.id%>?_method=put" method="post">
                 <input type="text"  name="image"  value="<%= book.image %>" >
                 <input type="text" name="title" value="<%= book.title %>">
                 <input type="text" name="author" value="<%= book.author %>">
                 <textarea name="description" cols="30" rows="10"><%= book.description %></textarea>
-                <button type='submit'> Update Details</button>
+                <button id="up-btn" type='submit'> Update Details</button>
             </form>
         </section>
 
         <form action="/delete/<%=book.id%>?_method=delete" method="post">
-            <button type="submit">Delete</button>
+            <button id="delete-btn" type="submit">Delete</button>
         </form>
-
+        <footer>
+            <p class="all">All right reserved 2020 </p>
+            <p class="done">Done By : Reham AL-Sobh </p>
+            
+        </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
         <script src="/js/app.js"></script>
 </body>
